@@ -1,0 +1,89 @@
+/*----------------------------------------------------------------------
+
+  Procedure for localizing T-current in distal dend_tcrites
+
+	- Reconstructed TC cell with 200 compartments (tc200)
+	- currents must be inserted everywhere
+	- GHK
+
+	first parameter: somatic and proximal dend_tcritic conductance
+	secnd parameter: medial dend_tcritic conductance
+	third parameter: distal dend_tcritic conductance
+
+----------------------------------------------------------------------*/
+
+proc localize() {
+
+	/* CHANGE ALL : */
+
+		forall { pcabar_itGHK = $3 }
+
+
+
+	/* CHANGE SOMA : */
+
+		soma_tc.pcabar_itGHK = $1
+
+
+	/* CHANGE PROXIMAL SEGMENTS : (idem soma) */
+
+		dend_tc3[0].pcabar_itGHK = $1
+		dend_tc4[0].pcabar_itGHK = $1
+		dend_tc6[0].pcabar_itGHK = $1
+		dend_tc7[0].pcabar_itGHK = $1
+		dend_tc8[0].pcabar_itGHK = $1
+		dend_tc9[0].pcabar_itGHK = $1
+		dend_tc10[0].pcabar_itGHK = $1
+		dend_tc11[0].pcabar_itGHK = $1
+
+
+
+	/* CHANGE MEDIAL SEGMENTS : */
+
+		dend_tc2[0].pcabar_itGHK = $1
+
+		dend_tc3[1].pcabar_itGHK = $2
+		dend_tc3[8].pcabar_itGHK = $2
+
+		dend_tc4[1].pcabar_itGHK = $2
+		dend_tc4[4].pcabar_itGHK = $2
+
+		dend_tc6[1].pcabar_itGHK = $2
+		dend_tc6[2].pcabar_itGHK = $2
+		dend_tc6[3].pcabar_itGHK = $2
+		dend_tc6[8].pcabar_itGHK = $2
+		dend_tc6[13].pcabar_itGHK = $2
+		dend_tc6[20].pcabar_itGHK = $2
+
+		dend_tc7[1].pcabar_itGHK = $2
+		dend_tc7[4].pcabar_itGHK = $2
+		dend_tc7[5].pcabar_itGHK = $2
+
+		dend_tc8[1].pcabar_itGHK = $2
+		dend_tc8[14].pcabar_itGHK = $2
+		dend_tc8[24].pcabar_itGHK = $2
+
+		dend_tc9[7].pcabar_itGHK = $2
+		dend_tc9[8].pcabar_itGHK = $2
+		dend_tc9[22].pcabar_itGHK = $2
+		dend_tc9[26].pcabar_itGHK = $2
+
+		dend_tc10[2].pcabar_itGHK = $2
+		dend_tc10[6].pcabar_itGHK = $2
+		dend_tc10[7].pcabar_itGHK = $2
+		dend_tc10[8].pcabar_itGHK = $2
+		dend_tc10[11].pcabar_itGHK = $2
+		dend_tc10[16].pcabar_itGHK = $2
+
+		dend_tc11[1].pcabar_itGHK = $2
+		dend_tc11[10].pcabar_itGHK = $2
+		dend_tc11[13].pcabar_itGHK = $2
+		dend_tc11[14].pcabar_itGHK = $2
+		dend_tc11[15].pcabar_itGHK = $2
+		dend_tc11[16].pcabar_itGHK = $2
+		dend_tc11[18].pcabar_itGHK = $2
+
+}
+
+
+
